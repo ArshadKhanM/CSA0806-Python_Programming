@@ -9,7 +9,6 @@
 **Course:** Python Programming
 
 **Python used for validation:** 3.11.0; standard library only
-**Reference:** `Python_Programming_Assignment1_S_Jai_Aakash-6.pdf`
 
 > **Identity and source note:** The example student's identifying details in the reference PDF have intentionally not been copied. Replace the placeholders with your own details before submission. The provided reference PDF remains unmodified in the project root.
 

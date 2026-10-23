@@ -2,9 +2,9 @@
 
 **Objective:** design, implement, and validate an exact-money payment calculator for a village milk co-operative, then extend it for seasonal rates and a ten-day volume bonus.
 
-**Student name:** `[Your Name]`
+**Student name:** `Mohamed Arshad Khan M`
 
-**Register number:** `[Your Register Number]`
+**Register number:** `1965L260001`
 
 **Python version used for validation:** Python 3.11.0 (standard library only)
 **GitHub repository:** `[Add the repository URL after publishing]`

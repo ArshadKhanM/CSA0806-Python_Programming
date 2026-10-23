@@ -2,9 +2,9 @@
 
 ## Design, Implement and Validate a Payment Calculator for a Village Milk Co-operative
 
-**Student name:** `[Your Name]`
+**Student name:** `Mohamed Arshad Khan M`
 
-**Register number:** `[Your Register Number]`
+**Register number:** `1965L260001`
 
 **Course:** Python Programming
 

@@ -1,0 +1,15 @@
+flowchart TD
+    A([Start]) --> B[Read farmer ID, litres, fat, SNF, shift]
+    B --> C{Decimal text valid and finite?}
+    C -- No --> E[Display input error]
+    C -- Yes --> D{ID, litres, ranges, and shift valid?}
+    D -- No --> E
+    D -- Yes --> F[Calculate signed fat and SNF steps]
+    F --> G[Calculate and round rate to 0.01]
+    G --> H[Calculate and round payment to 0.01]
+    H --> I[Append ledger record and add payment to total]
+    E --> J{More collection entries?}
+    I --> J
+    J -- Yes --> B
+    J -- No --> K[Display ledger, errors, and ten-day total]
+    K --> L([End])

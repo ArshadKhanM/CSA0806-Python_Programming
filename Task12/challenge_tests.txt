@@ -1,0 +1,17 @@
+test_bonus_requires_more_than_500_litres (Task12.test_seasonal_milkrate.SeasonalMilkRateTests.test_bonus_requires_more_than_500_litres) ... ok
+test_invalid_season_and_volume_rejected (Task12.test_seasonal_milkrate.SeasonalMilkRateTests.test_invalid_season_and_volume_rejected) ... ok
+test_quality_bounds_rejected (Task12.test_seasonal_milkrate.SeasonalMilkRateTests.test_quality_bounds_rejected) ... ok
+test_seasonal_rate_examples (Task12.test_seasonal_milkrate.SeasonalMilkRateTests.test_seasonal_rate_examples) ... ok
+test_step_tie_rounds_half_up (Task12.test_seasonal_milkrate.SeasonalMilkRateTests.test_step_tie_rounds_half_up) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK
+
+--- Seasonal rate and bonus examples ---
+30.40
+32.45
+16900.00
+16000.00
+16282.50

@@ -1,0 +1,15 @@
+type(10): <class 'int'>
+type(10.0): <class 'float'>
+type("10"): <class 'str'>
+type(True): <class 'bool'>
+type([10, 8.5]): <class 'list'>
+7 / 2: 3.5
+7 // 2: 3
+7 % 2: 1
+-7 // 2: -4
+0.1 + 0.2 == 0.3: False
+float total: 33400.30000000061
+Decimal total: 33400.30
+float equality / Decimal equality: False True
+object sizes (bytes): 28 24 104
+integer-paise total: 3340030

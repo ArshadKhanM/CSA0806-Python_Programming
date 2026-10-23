@@ -1,0 +1,35 @@
+ALGORITHM MilkPayment
+    INPUT rate card and collection entries
+    SET ledger to empty list
+    SET total to Decimal 0.00
+
+    FOR each entry
+        READ farmer_id, litres_text, fat_text, snf_text, shift
+        TRY
+            CONVERT decimal text to finite Decimal values
+            VALIDATE ID, positive litres, fat/SNF ranges, and known shift
+        IF validation fails
+            DISPLAY the specific validation error
+            CONTINUE to next entry
+        END IF
+
+        fat_steps = ROUND_HALF_UP((fat - 3.50) / 0.10)
+        snf_steps = ROUND_HALF_UP((snf - 8.50) / 0.10)
+        rate = 30.00 + fat_steps * 0.40 + snf_steps * 0.30
+        rate = ROUND_HALF_UP(rate to 0.01)
+        payment = ROUND_HALF_UP(litres * rate to 0.01)
+        APPEND farmer, measurements, shift, rate, payment to ledger
+        total = total + payment
+    END FOR
+
+    DISPLAY ledger and total
+END ALGORITHM
+
+Task 12 extension:
+    SELECT STANDARD or APR_JUN rate card
+    USE base 32.00 and fat value 0.45 for APR_JUN;
+    otherwise use the standard base 30.00 and fat value 0.40
+    IF farmer ten-day litres > 500
+        ADD 0.50 per litre to the selected rate
+    END IF
+    CALCULATE and round the payment to 0.01

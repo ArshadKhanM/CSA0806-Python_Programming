@@ -1,0 +1,5 @@
+192311001, Anita, 1250.50
+192311002, Bala, 980.00
+192311003, Chitra, 125.75
+Total 2356.25
+Rejected: [RejectedLine(line_number=3, content='damaged,record', reason='expected 3 fields, found 2')]

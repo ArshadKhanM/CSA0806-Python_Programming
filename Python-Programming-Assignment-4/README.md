@@ -1,7 +1,7 @@
 # Python Programming Assignment 4 — Robust File Processing
 
-**Student name:** [Your Name]  
-**Register number:** [Your Register Number]  
+**Student name:** [Mohamed Arshad Khan M ]  
+**Register number:** [1965L260001]  
 **Python used for validation:** Python 3.11.0 (standard library only)  
 **Repository:** https://github.com/ArshadKhanM/CSA0806-Python_Programming
 

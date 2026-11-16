@@ -1,0 +1,4 @@
+unique registrations: 4
+duplicate registrations merged: 1
+event categories: 4
+rejected records: 3

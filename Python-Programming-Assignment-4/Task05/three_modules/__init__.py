@@ -1,0 +1,1 @@
+"""Three-module attendance organization."""

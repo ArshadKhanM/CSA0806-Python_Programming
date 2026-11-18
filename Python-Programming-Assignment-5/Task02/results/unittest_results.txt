@@ -1,0 +1,14 @@
+test_complete_code_skips_missing_negative_and_over_limit (Task02.test_cleaning_pipeline.CleaningPipelineTests.test_complete_code_skips_missing_negative_and_over_limit) ... ok
+test_duplicate_fault_fahrenheit_and_missing_values (Task02.test_cleaning_pipeline.CleaningPipelineTests.test_duplicate_fault_fahrenheit_and_missing_values) ... ok
+test_missing_column_fails_clearly (Task02.test_cleaning_pipeline.CleaningPipelineTests.test_missing_column_fails_clearly) ... ok
+test_parameterized_database_queries (Task02.test_cleaning_pipeline.CleaningPipelineTests.test_parameterized_database_queries) ... ok
+test_completed_code_averages_and_injection_payload (Task03.test_adversarial_checks.AdversarialChecksTests.test_completed_code_averages_and_injection_payload) ... ok
+test_chatbot_parameterizes_station_and_date (Task05.test_complaint_ai.ComplaintAiTests.test_chatbot_parameterizes_station_and_date) ... ok
+test_dataset_has_at_least_fifty_and_expected_labels (Task05.test_complaint_ai.ComplaintAiTests.test_dataset_has_at_least_fifty_and_expected_labels) ... ok
+test_sentiment_and_negation (Task05.test_complaint_ai.ComplaintAiTests.test_sentiment_and_negation) ... ok
+test_summary_selects_important_sentence (Task05.test_complaint_ai.ComplaintAiTests.test_summary_selects_important_sentence) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.009s
+
+OK

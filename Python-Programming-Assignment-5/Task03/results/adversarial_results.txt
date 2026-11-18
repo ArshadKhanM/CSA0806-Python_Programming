@@ -1,0 +1,18 @@
+Malformed-source responses:
+missing column: rejected: CSV is missing required columns: hour, no2, pm10, temperature, temperature_unit
+wrong delimiter: rejected: CSV is missing required columns: date, hour, no2, pm10, pm25, station, temperature, temperature_unit
+Latin-1 bytes: rejected by UTF-8 decoder: 'utf-8' codec can't decode byte 0xe9 in position 64: invalid continuation byte
+empty file: rejected: CSV is missing required columns: date, hour, no2, pm10, pm25, station, temperature, temperature_unit
+
+Injection payload: "Adyar' OR '1'='1"
+String-built query returned 4 rows
+Parameterized query returned 0 rows
+Complete-code station averages: (54.0, 108.0, None)
+
+Lexicon scorer adversarial examples (sarcasm and compositional limits):
+neutral  score=+0 | The air is good, but the road is dirty.
+neutral  score=+0 | Not bad, but not good either.
+negative score=-1 | Not never good.
+neutral  score=+0 | Great, another clean-air day (sarcasm).
+
+Interpretation: required-column validation catches incomplete and semicolon-delimited files; UTF-8 decoding rejects incompatible bytes; an empty source is not a valid dataset. Interpolated SQL treats the payload as syntax and returns every row, while a ? placeholder treats it as a literal station name and returns no rows. The simple sentiment rule can cancel mixed opinions but cannot detect sarcasm or compose multiple negators correctly. Both executemany and n execute calls perform O(n) inserts; executemany reduces per-row Python call overhead and one transaction avoids committing each record separately.

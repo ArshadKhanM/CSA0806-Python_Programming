@@ -1,0 +1,15 @@
+Input rows: 17
+Cleaned rows: 13
+Cleaning audit: {'input_rows': 17, 'malformed_rows': 3, 'duplicates': 1, 'missing': 6, 'impossible': 2, 'invalid': 0, 'imputed': 6}
+Before sample: [{'station': 'Adyar', 'date': '2026-10-02', 'hour': '0', 'pm25': '60', 'pm10': '95', 'no2': '32', 'temperature': '77', 'temperature_unit': 'F'}, {'station': 'Adyar', 'date': '2026-10-01', 'hour': '0', 'pm25': '48', 'pm10': '72', 'no2': '18', 'temperature': '77', 'temperature_unit': 'F'}, {'station': ' adyar ', 'date': '2026-10-01', 'hour': '0', 'pm25': '48', 'pm10': '72', 'no2': '18', 'temperature': '77', 'temperature_unit': 'F'}]
+After sample: [{'station': 'Adyar', 'day': '2026-10-01', 'hour': 0, 'source_temp_unit': 'F', 'pm25': 48.0, 'pm10': 72.0, 'no2': 18.0, 'temperature_c': 25.0}, {'station': 'Adyar', 'day': '2026-10-01', 'hour': 1, 'source_temp_unit': 'F', 'pm25': 48.0, 'pm10': 80.0, 'no2': 20.0, 'temperature_c': 25.555555555555557}, {'station': 'Adyar', 'day': '2026-10-01', 'hour': 2, 'source_temp_unit': 'F', 'pm25': 48.0, 'pm10': 80.0, 'no2': 20.0, 'temperature_c': 25.555555555555557}]
+Adyar October mean PM2.5: 51.8
+October station means: [('Adyar', 51.8), ('Guindy', 105.25), ('Marina', 37.5)]
+Worst observed hours (hour, mean PM2.5): [(2, 84.5), (0, 69.6), (1, 59.5)]
+Chart files: pm25_monthly_trend.png, station_comparison.png, temperature_pm25_scatter.png, worst_hours.png
+Interpretation: Adyar's two-day mean is based on five non-null hourly values after missing-value imputation; station comparisons are descriptive for this small synthetic sample. The scatter plot compares converted Celsius temperatures with valid PM2.5 pairs. Hourly means are sparse because the sample includes only a few reporting hours.
+Chart interpretation - trend: the daily means rise from 66.25 on October 1 to 75.0 on October 2. This is a two-day synthetic sample, not evidence of a long-term city trend.
+Chart interpretation - stations: Guindy has the highest sample mean (105.25), followed by Adyar (51.8) and Marina (37.5). Different sample sizes and the small fixture make this comparison descriptive.
+Chart interpretation - temperature scatter: the displayed points pair Celsius-converted temperatures with valid PM2.5 values. This small sample does not establish a meaningful temperature relationship.
+Chart interpretation - hours: hour 2 has the highest sample mean (84.5), while only a few hours are represented. More days and complete hourly coverage are needed before identifying a recurring pollution peak.
+B1.2 design comparison: the implementation follows the design by normalizing station/date/hour, deduplicating, converting Fahrenheit, imputing only missing values, keeping impossible readings NULL, inserting with executemany, and querying by station/date. The sample pipeline additionally counts malformed rows and writes reproducible chart and CSV outputs.

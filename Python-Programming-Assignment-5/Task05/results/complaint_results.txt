@@ -1,0 +1,11 @@
+Complaint count: 50
+Sentiment agreement with manual labels: 49/50 (98.0%)
+Disagreements: [('5', 'positive', 'neutral')]
+Misclassified example: complaint 5 is manually positive but scores neutral because 'improved' (+1) and 'smoke' (-1) cancel; the rule does not understand that reduced smoke is a positive change.
+First-sentence baseline salient-word coverage: 0/50
+Extractive summary salient-word coverage: 45/50
+Summary comparison: the first-sentence baseline selects the generic reporting sentence and covers no sentiment keywords; the word-score extractor covers salient keywords in 45 complaints. Selecting the first k pre-split sentences costs O(1) time and selection space for fixed k. The extractor tokenizes/scans O(words) text and selects top sentences in O(sentences log k), which is O(words) for fixed k; it uses O(words) space for word frequencies and O(k) top-sentence selection space, in addition to the input and emitted summary.
+Example complaint: This complaint was recorded today. The Adyar road air is clean and bus service is helpful.
+Extractive summary: The Adyar road air is clean and bus service is helpful.
+Chatbot example: Mean PM2.5 at Adyar on 2026-10-01: 48.0 micrograms/m3.
+Interpretation: the hand-authored labels are a small, synthetic reference set, not a held-out clinical or city-wide evaluation. The simple lexicon handles direct polarity and one-token negation, but misses sarcasm, scope, double negation, and domain-specific meaning. The extractive summary retains salient source text; its coverage measure counts a lexicon word and does not establish factual quality. A model should be considered only after a representative, privacy-reviewed multilingual evaluation shows a useful improvement.

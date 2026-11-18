@@ -1,0 +1,42 @@
+Input: deterministic hourly PM2.5 values; generation excluded from timings.
+Each method includes reading/parsing the CSV; SQL includes batched database load and GROUP BY. One run per size; timings vary by machine.
+
+Stations | Readings | Loop seconds | pandas seconds | SQL seconds | pandas frame bytes | groups
+
+CSV module vs pandas cleaning/min-max at the requested input sizes:
+Rows | CSV seconds | pandas seconds | pandas frame bytes | valid values
+   1000 | 0.0172 | 0.0161 | 137128 | 964
+ 100000 | 0.3676 | 0.1349 | 13700128 | 96343
+1000000 | 2.5625 | 0.9904 | 137000128 | 963435
+
+       1 |     8760 | 0.0499 | 0.0174 | 0.0458 | 1314128 | 365
+      12 |   105120 | 0.2515 | 0.1172 | 0.4863 | 15768128 | 4380
+     120 |  1051200 | 2.3362 | 1.0545 | 5.1558 | 157680128 | 43800
+
+cProfile: plain Python loop on 12 stations (105,120 rows):
+         635907 function calls in 0.476 seconds
+
+   Ordered by: cumulative time
+   List reduced from 22 to 8 due to restriction <8>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.125    0.125    0.476    0.476 benchmark_analysis.py:40(loop_group)
+   105121    0.198    0.000    0.347    0.000 csv.py:107(__next__)
+   105122    0.076    0.000    0.079    0.000 {built-in method builtins.next}
+   210241    0.053    0.000    0.053    0.000 csv.py:93(fieldnames)
+   210240    0.017    0.000    0.017    0.000 {built-in method builtins.len}
+        1    0.003    0.003    0.003    0.003 benchmark_analysis.py:48(<dictcomp>)
+      394    0.001    0.000    0.002    0.000 <frozen codecs>:319(decode)
+      394    0.001    0.000    0.001    0.000 {built-in method _codecs.utf_8_decode}
+
+
+
+Composite-index experiment on 1,051,200 readings (five repeated station/day averages):
+Without index: 0.248809 seconds
+With (station, day) index: 0.000069 seconds
+Query plan before: [(3, 0, 0, 'SCAN readings')]
+Query plan after: [(4, 0, 0, 'SEARCH readings USING INDEX idx_station_day (station=? AND day=?)')]
+
+Interpretation: all three methods matched every station/day mean. The loop is transparent and streams input while retaining only group totals; pandas is concise and vectorized but materializes the DataFrame; SQLite adds ingestion cost before reusable SQL queries. Use pandas for a quick one-off exploration and SQLite for repeatable automated reports. cProfile attributes most work to CSV iteration/conversion and dictionary aggregation. An index benefits selective station/day lookups, not an all-row GROUP BY.
+
+Production decision: at 112 stations reporting every 15 minutes, the network would generate 3,924,480 readings/year before retention. Use validated batch ingestion into a managed relational database (PostgreSQL with date partitioning, station/date indexes, and daily aggregate tables), retain immutable source files, and monitor rejected/imputed readings. Keep human-reviewed lexicon triage initially for 50,000 complaints/month (600,000/year); evaluate a privacy-reviewed, multilingual classifier against labeled local complaints before replacing it. The measured lexicon results and workload are not enough evidence to deploy a large language model without a validation study.

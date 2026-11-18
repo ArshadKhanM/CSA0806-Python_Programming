@@ -1,0 +1,51 @@
+id,complaint,manual_label
+1,"This complaint was recorded today. The Adyar road air is clean and bus service is helpful.",positive
+2,"This complaint was recorded today. The station air is good and the response was fast.",positive
+3,"This complaint was recorded today. Our neighborhood is clean and service has improved.",positive
+4,"This complaint was recorded today. The monitoring team was helpful and the air is good.",positive
+5,"This complaint was recorded today. The factory filter is improved and smoke is reduced.",positive
+6,"This complaint was recorded today. The bus route is fast and the station is clean.",positive
+7,"This complaint was recorded today. The air quality report is good and staff are helpful.",positive
+8,"This complaint was recorded today. The street is clean and the response was improved.",positive
+9,"This complaint was recorded today. The new filter is good and service is fast.",positive
+10,"This complaint was recorded today. The sensor repair was helpful and readings improved.",positive
+11,"This complaint was recorded today. The park is clean and the monitoring team is helpful.",positive
+12,"This complaint was recorded today. The response was fast and air quality is good.",positive
+13,"This complaint was recorded today. The road is clean and the bus service improved.",positive
+14,"This complaint was recorded today. The staff were helpful and the update was fast.",positive
+15,"This complaint was recorded today. The new system is good and conditions improved.",positive
+16,"This complaint was recorded today. Our street is clean and the city response is helpful.",positive
+17,"This complaint was recorded today. The station report is good and the repair was fast.",positive
+18,"This complaint was recorded today. The air is clean and the new filter is helpful.",positive
+19,"This complaint was recorded today. The service is fast and monitoring has improved.",positive
+20,"This complaint was recorded today. The air quality is good and the response is helpful.",positive
+21,"This complaint was recorded today. Smoke from the factory is bad and the air is dirty.",negative
+22,"This complaint was recorded today. The bus is slow and the roadside air is dirty.",negative
+23,"This complaint was recorded today. The sensor is broken and smoke remains bad.",negative
+24,"This complaint was recorded today. The staff were rude and the service is slow.",negative
+25,"This complaint was recorded today. The road is dirty and factory smoke is bad.",negative
+26,"This complaint was recorded today. The monitor is broken and the response was slow.",negative
+27,"This complaint was recorded today. The air is dirty and the staff were rude.",negative
+28,"This complaint was recorded today. The factory smoke is bad and the service is slow.",negative
+29,"This complaint was recorded today. The filter is broken and the road is dirty.",negative
+30,"This complaint was recorded today. The response was rude and smoke remains bad.",negative
+31,"This complaint was recorded today. The bus is slow and the factory filter is broken.",negative
+32,"This complaint was recorded today. The roadside air is dirty and the response is rude.",negative
+33,"This complaint was recorded today. Smoke is bad and the monitor is broken.",negative
+34,"This complaint was recorded today. The service is slow and the air is dirty.",negative
+35,"This complaint was recorded today. The staff were rude and the filter is broken.",negative
+36,"This complaint was recorded today. Factory smoke is bad and the bus is slow.",negative
+37,"This complaint was recorded today. The road is dirty and readings are bad.",negative
+38,"This complaint was recorded today. The monitor is broken and the service is slow.",negative
+39,"This complaint was recorded today. The staff were rude and smoke is bad.",negative
+40,"This complaint was recorded today. The filter is broken and the air is dirty.",negative
+41,"This complaint was recorded today. The road is clean but smoke continues nearby.",neutral
+42,"This complaint was recorded today. The air is good but the street is dirty.",neutral
+43,"This complaint was recorded today. The bus is fast but factory smoke remains.",neutral
+44,"This complaint was recorded today. The staff are helpful but the sensor is broken.",neutral
+45,"This complaint was recorded today. The report improved but roadside smoke continues.",neutral
+46,"This complaint was recorded today. The readings arrived at the usual time.",neutral
+47,"This complaint was recorded today. Please check the sensor near the market.",neutral
+48,"This complaint was recorded today. The station sent a reading this morning.",neutral
+49,"This complaint was recorded today. A new measurement is available for review.",neutral
+50,"This complaint was recorded today. The location is near the central library.",neutral
